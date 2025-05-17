@@ -12,7 +12,6 @@ import {
 import { A } from "@solidjs/router";
 import { Component } from "solid-js";
 
-// TODO make sidebar links better
 const AppSidebar: Component = () => {
   return (
     <Sidebar variant="floating">
@@ -23,13 +22,9 @@ const AppSidebar: Component = () => {
         <SidebarGroup />
         {/* <SidebarGroupLabel>Stuff</SidebarGroupLabel> */}
         <SidebarGroupContent>
-          <SidebarMenu class="text-center list-inside">
-            <SidebarMenuItem class="text-center">
-              <SidebarMenuButton
-                as={A}
-                href={"/assessori/"}
-                class="text-center"
-              >
+          <SidebarMenu class="pl-6">
+            <SidebarMenuItem>
+              <SidebarMenuButton as={A} href={"/assessori/"}>
                 home
               </SidebarMenuButton>
             </SidebarMenuItem>
