@@ -1,6 +1,6 @@
 import {
-  Accessor,
-  type Component,
+  Component,
+  createEffect,
   createResource,
   createSignal,
 } from "solid-js";
@@ -9,7 +9,7 @@ import { $typst } from "@myriaddreamin/typst.ts";
 
 let oldSvg = "";
 
-const SvgPreview: Component<{ contentSignal: Accessor<string> }> = (props) => {
+const SvgPreview: Component<{ content: string }> = (props) => {
   const [hasError, setHasError] = createSignal(false);
 
   const getArtifactData = async (content: string) => {
@@ -24,7 +24,13 @@ const SvgPreview: Component<{ contentSignal: Accessor<string> }> = (props) => {
     }
   };
 
-  const [svg] = createResource(props.contentSignal, getArtifactData);
+  const [c, sc] = createSignal("");
+  const [svg] = createResource(c, getArtifactData);
+
+  createEffect(() => {
+    console.log(props.content);
+    sc(props.content);
+  });
 
   return (
     <div>
