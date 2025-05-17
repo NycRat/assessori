@@ -1,6 +1,6 @@
 import { Component, createSignal } from "solid-js";
-import SvgPreview from "./SvgPreview";
-import DownloadButton from "./DownloadButton";
+import SvgPreview from "./svg-preview";
+import DownloadButton from "./download-button";
 
 const defaultContent =
   "#set text(40pt)\n\nHello !!\n\nThis is Typst in the browser !!\n\n$ integral_0^(10) e^x dif x = e^10 - 1 $";

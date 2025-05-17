@@ -2,11 +2,11 @@ import { render } from "solid-js/web";
 import { Route, Router } from "@solidjs/router";
 
 import "./index.css";
-import App from "./App";
+import App from "./app";
 
 import { $typst } from "@myriaddreamin/typst.ts";
-import NotFoundPage from "./NotFoundPage";
-import MainPage from "./MainPage";
+import NotFoundPage from "./not-found-page";
+import MainPage from "./main-page";
 
 $typst.setCompilerInitOptions({
   getModule: () =>
