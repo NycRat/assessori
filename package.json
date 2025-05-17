@@ -1,5 +1,6 @@
 {
   "name": "vite-template-solid",
+  "homepage": "https://nycrat.github.io/assessori",
   "version": "0.0.0",
   "description": "",
   "type": "module",
