@@ -1,25 +1,29 @@
-import type { Component } from "solid-js";
+import { createSignal, type Component } from "solid-js";
+import SvgPreview from "./SvgPreview";
+import DownloadButton from "./DownloadButton";
 
-import logo from "./logo.svg";
-import styles from "./App.module.css";
+const defaultContent =
+  "#set text(40pt)\n\nHello !!\n\nThis is Typst in the browser !!\n\n$ integral_0^(10) e^x dif x = e^10 - 1 $";
 
 const App: Component = () => {
+  const [content, setContent] = createSignal(defaultContent);
+
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+    <div>
+      <h1>assessori 📝</h1>
+
+      <textarea
+        onInput={(event) => {
+          setContent(event.target.value);
+        }}
+        cols={50}
+        rows={20}
+      >
+        {defaultContent}
+      </textarea>
+
+      <SvgPreview contentSignal={content} />
+      <DownloadButton content={content()} />
     </div>
   );
 };
