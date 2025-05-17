@@ -31,13 +31,14 @@ const SvgPreview: Component<{ contentSignal: Accessor<string> }> = (props) => {
       {svg() === undefined ? (
         "loading..."
       ) : (
-        <>
-          {hasError() && <div>typst error...</div>}
-          <div
-            innerHTML={svg()}
-            style={{ border: "1px solid black", width: "fit-content" }}
-          />
-        </>
+        <div class="relative">
+          {hasError() && (
+            <div class="absolute bg-destructive text-secondary-foreground p-1 bottom-0">
+              typst error...
+            </div>
+          )}
+          <div innerHTML={svg()} class="border w-fit" />
+        </div>
       )}
     </div>
   );

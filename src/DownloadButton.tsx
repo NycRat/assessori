@@ -1,6 +1,7 @@
 import { type Component } from "solid-js";
 
 import { $typst } from "@myriaddreamin/typst.ts";
+import { Button } from "@/components/ui/button";
 
 const DownloadButton: Component<{ content: string }> = (props) => {
   const exportPdf = () =>
@@ -21,7 +22,11 @@ const DownloadButton: Component<{ content: string }> = (props) => {
       URL.revokeObjectURL(link.href);
     });
 
-  return <button onClick={exportPdf}>download as pdf</button>;
+  return (
+    <Button onClick={exportPdf} variant={"secondary"}>
+      download as pdf
+    </Button>
+  );
 };
 
 export default DownloadButton;
