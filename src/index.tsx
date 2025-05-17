@@ -1,10 +1,12 @@
-/* @refresh reload */
 import { render } from "solid-js/web";
+import { Route, Router } from "@solidjs/router";
 
 import "./index.css";
 import App from "./App";
 
 import { $typst } from "@myriaddreamin/typst.ts";
+import NotFoundPage from "./NotFoundPage";
+import MainPage from "./MainPage";
 
 $typst.setCompilerInitOptions({
   getModule: () =>
@@ -21,4 +23,12 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error("Root element not found.");
 }
 
-render(() => <App />, root!);
+render(
+  () => (
+    <Router root={App}>
+      <Route path="/assessori/" component={MainPage} />
+      <Route path="*" component={NotFoundPage} />
+    </Router>
+  ),
+  root!,
+);
