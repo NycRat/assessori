@@ -20,7 +20,7 @@ const SourcePage: Component = () => {
   });
 
   return (
-    <main class="p-12 flex gap-2">
+    <main class="p-12 flex gap-2 justify-center w-full">
       <textarea
         class="border bg-card p-2"
         onInput={(event) => {
@@ -31,8 +31,10 @@ const SourcePage: Component = () => {
         {examTemplate}
       </textarea>
 
-      <div class="space-y-2">
-        <SvgPreview content={state.content} />
+      <div class="max-h-full">
+        <div class="space-y-2 overflow-scroll max-h-11/12">
+          <SvgPreview content={state.content} />
+        </div>
         <DownloadButton content={state.content} />
       </div>
     </main>

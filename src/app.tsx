@@ -11,7 +11,7 @@ const App: Component<RouteSectionProps> = (props) => {
 
   return (
     <StateContext.Provider value={{ state, setState }}>
-      <SidebarProvider>
+      <SidebarProvider class="max-h-screen">
         <AppSidebar />
         {props.children}
       </SidebarProvider>
