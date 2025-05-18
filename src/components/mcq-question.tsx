@@ -34,7 +34,7 @@ const Mcq: Component<{
       <CardContent class="pt-6 space-y-1">
         {Array.from(Array(4).keys()).map((i) => (
           <div class="flex gap-4">
-            A.
+            {String.fromCharCode("A".charCodeAt(0) + i)}.
             <textarea
               onInput={(event) => {
                 setState(
