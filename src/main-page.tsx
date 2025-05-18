@@ -1,8 +1,8 @@
 import { Component, onMount, useContext } from "solid-js";
-import SvgPreview from "./svg-preview";
-import DownloadButton from "./download-button";
-import { StateContext } from "./state-context";
-import { StateContextType } from "./types";
+import SvgPreview from "./components/svg-preview";
+import DownloadButton from "./components/download-button";
+import { StateContext } from "./lib/state-context";
+import { StateContextType } from "./lib/types";
 
 const defaultContent =
   "#set text(40pt)\n\nHello !!\n\nThis is Typst in the browser !!\n\n$ integral_0^(10) e^x dif x = e^10 - 1 $";
