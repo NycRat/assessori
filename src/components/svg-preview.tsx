@@ -28,7 +28,6 @@ const SvgPreview: Component<{ content: string }> = (props) => {
   const [svg] = createResource(c, getArtifactData);
 
   createEffect(() => {
-    console.log(props.content);
     sc(props.content);
   });
 
