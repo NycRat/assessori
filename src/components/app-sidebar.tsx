@@ -8,6 +8,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarRail,
 } from "@/components/ui/sidebar";
 import { A } from "@solidjs/router";
 import { Component } from "solid-js";
@@ -15,6 +16,7 @@ import { Component } from "solid-js";
 const AppSidebar: Component = () => {
   return (
     <Sidebar variant="floating">
+      <SidebarRail />
       <SidebarHeader class="p-6 bg-primary text-primary-foreground">
         <h1 class="font-bold text-2xl">assessori 📝</h1>
       </SidebarHeader>
@@ -22,15 +24,20 @@ const AppSidebar: Component = () => {
         <SidebarGroup />
         {/* <SidebarGroupLabel>Stuff</SidebarGroupLabel> */}
         <SidebarGroupContent>
-          <SidebarMenu class="pl-6">
+          <SidebarMenu class="px-6">
             <SidebarMenuItem>
               <SidebarMenuButton as={A} href={"/assessori/"}>
                 home
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton as={A} href={"/assessori/woah"}>
-                woah
+              <SidebarMenuButton as={A} href={"/assessori/compose"}>
+                compose
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton as={A} href={"/assessori/source"}>
+                source
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>

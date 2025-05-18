@@ -6,7 +6,9 @@ import App from "./app";
 
 import { $typst } from "@myriaddreamin/typst.ts";
 import NotFoundPage from "./not-found-page";
-import MainPage from "./main-page";
+import SourcePage from "./source-page";
+import HomePage from "./home-page";
+import ComposePage from "./compose-page";
 
 $typst.setCompilerInitOptions({
   getModule: () =>
@@ -26,7 +28,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 render(
   () => (
     <Router root={App}>
-      <Route path="/assessori/" component={MainPage} />
+      <Route path="/assessori/" component={HomePage} />
+      <Route path="/assessori/compose/" component={ComposePage} />
+      <Route path="/assessori/source/" component={SourcePage} />
       <Route path="*" component={NotFoundPage} />
     </Router>
   ),

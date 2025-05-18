@@ -4,10 +4,9 @@ import DownloadButton from "./components/download-button";
 import { StateContext } from "./lib/state-context";
 import { StateContextType } from "./lib/types";
 
-const defaultContent =
-  "#set text(40pt)\n\nHello !!\n\nThis is Typst in the browser !!\n\n$ integral_0^(10) e^x dif x = e^10 - 1 $";
+import { examTemplate } from "./lib/templates";
 
-const MainPage: Component = () => {
+const SourcePage: Component = () => {
   const context = useContext<StateContextType | undefined>(StateContext);
 
   if (!context) {
@@ -17,7 +16,7 @@ const MainPage: Component = () => {
   const { state, setState } = context;
 
   onMount(() => {
-    setState("content", defaultContent);
+    setState("content", examTemplate);
   });
 
   return (
@@ -29,7 +28,7 @@ const MainPage: Component = () => {
         }}
         cols={80}
       >
-        {defaultContent}
+        {examTemplate}
       </textarea>
 
       <div class="space-y-2">
@@ -40,4 +39,4 @@ const MainPage: Component = () => {
   );
 };
 
-export default MainPage;
+export default SourcePage;
