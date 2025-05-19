@@ -1,16 +1,20 @@
-import { Component } from "solid-js";
+import { Component, createEffect } from "solid-js";
 import { SidebarProvider } from "./components/ui/sidebar";
 import AppSidebar from "./components/app-sidebar";
 import { RouteSectionProps } from "@solidjs/router";
 import { createStore } from "solid-js/store";
 import { StateContext } from "./lib/state-context";
 import { State } from "./lib/types";
-import { getDefaultMcq } from "./lib/templates";
+import { apiFetchQuestions, apiPushQuestions } from "./lib/api";
 
 const App: Component<RouteSectionProps> = (props) => {
   const [state, setState] = createStore<State>({
     content: "",
-    questions: [getDefaultMcq()],
+    questions: apiFetchQuestions(),
+  });
+
+  createEffect(() => {
+    apiPushQuestions(state.questions);
   });
 
   return (
