@@ -131,3 +131,26 @@ export const getDefaultMcq = (): Question => {
     choices: ["Toronto", "Ottawa", "Vancouver", "Montreal"],
   };
 };
+
+export const getContentFromQuestions = (questions: Question[]) => {
+  let content = `#import "@preview/examine-ib:0.1.1": *
+
+#show: conf.with(exam-id: [0000-0001])
+
+#set page(fill: white)
+
+${questions
+  .map((question) => {
+    return `#mcq(
+  [${question.prompt}],
+  [${question.choices[0]}],
+  [${question.choices[1]}],
+  [${question.choices[2]}],
+  [${question.choices[3]}],
+)`;
+  })
+  .join("\n")}
+`;
+  console.log(content);
+  return content;
+};

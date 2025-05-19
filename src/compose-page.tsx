@@ -1,35 +1,12 @@
-import { Component, For, useContext } from "solid-js";
+import { Component, useContext } from "solid-js";
 import SvgPreview from "./components/svg-preview";
-import { Question, StateContextType } from "./lib/types";
+import { StateContextType } from "./lib/types";
 import { StateContext } from "./lib/state-context";
 import { Button } from "./components/ui/button";
 import { produce } from "solid-js/store";
 import Mcq from "./components/mcq-question";
-import { getDefaultMcq } from "./lib/templates";
+import { getContentFromQuestions, getDefaultMcq } from "./lib/templates";
 import DownloadButton from "./components/download-button";
-
-const getContentFromQuestions = (questions: Question[]) => {
-  let content = `#import "@preview/examine-ib:0.1.1": *
-
-#show: conf.with(exam-id: [0000-0001])
-
-#set page(fill: white)
-
-${questions
-  .map((question) => {
-    return `#mcq(
-  [${question.prompt}],
-  [${question.choices[0]}],
-  [${question.choices[1]}],
-  [${question.choices[2]}],
-  [${question.choices[3]}],
-)`;
-  })
-  .join("\n")}
-`;
-  console.log(content);
-  return content;
-};
 
 const ComposePage: Component = () => {
   const context = useContext<StateContextType | undefined>(StateContext);
