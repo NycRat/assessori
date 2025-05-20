@@ -4,9 +4,9 @@ import { StateContextType } from "./lib/types";
 import { StateContext } from "./lib/state-context";
 import { Button } from "./components/ui/button";
 import { produce } from "solid-js/store";
-import Mcq from "./components/mcq-question";
 import { getContentFromQuestions, getDefaultMcq } from "./lib/templates";
 import DownloadButton from "./components/download-button";
+import QuestionList from "./components/question-list";
 
 const ComposePage: Component = () => {
   const context = useContext<StateContextType | undefined>(StateContext);
@@ -37,13 +37,14 @@ const ComposePage: Component = () => {
           <DownloadButton content={getContentFromQuestions(state.questions)} />
         </div>
 
-        <ul class="space-y-4">
-          {Array.from(Array(state.questions.length).keys()).map((i) => (
-            <li>
-              <Mcq index={i} />
-            </li>
-          ))}
-        </ul>
+        <QuestionList />
+        {/* <ul class="space-y-4"> */}
+        {/*   {Array.from(Array(state.questions.length).keys()).map((i) => ( */}
+        {/*     <li> */}
+        {/*       <Mcq index={i} /> */}
+        {/*     </li> */}
+        {/*   ))} */}
+        {/* </ul> */}
       </div>
 
       <div class="max-h-full overflow-y-auto">

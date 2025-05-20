@@ -27,6 +27,7 @@
     "@radix-ui/react-tooltip": "^1.2.6",
     "@solidjs/router": "^0.15.3",
     "@tailwindcss/vite": "^4.1.7",
+    "@thisbeyond/solid-dnd": "^0.7.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-solid": "^0.511.0",
