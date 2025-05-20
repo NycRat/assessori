@@ -26,17 +26,17 @@ const AppSidebar: Component = () => {
         <SidebarGroupContent>
           <SidebarMenu class="px-6">
             <SidebarMenuItem>
-              <SidebarMenuButton as={A} href={"/assessori/"}>
+              <SidebarMenuButton as={A} href={"/"}>
                 home
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton as={A} href={"/assessori/compose"}>
+              <SidebarMenuButton as={A} href={"/compose"}>
                 compose
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton as={A} href={"/assessori/source"}>
+              <SidebarMenuButton as={A} href={"/source"}>
                 source
               </SidebarMenuButton>
             </SidebarMenuItem>
