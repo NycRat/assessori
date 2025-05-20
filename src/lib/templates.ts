@@ -127,8 +127,8 @@ export const examTemplate = `#import "@preview/examine-ib:0.1.1": *
 
 export const getDefaultMcq = (): Question => {
   return {
-    prompt: "What is the capital of Canada?",
-    choices: ["Toronto", "Ottawa", "Vancouver", "Montreal"],
+    prompt: "",
+    choices: ["", "", "", ""],
   };
 };
 

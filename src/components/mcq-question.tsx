@@ -27,6 +27,7 @@ const Mcq: Component<{
                 }),
               );
             }}
+            placeholder="question ?"
           >
             {state.questions[props.index].prompt}
           </textarea>
@@ -63,6 +64,7 @@ const Mcq: Component<{
               }}
               rows={1}
               class="resize-none w-full"
+              placeholder="answer"
             >
               {state.questions[props.index].choices[i]}
             </textarea>
