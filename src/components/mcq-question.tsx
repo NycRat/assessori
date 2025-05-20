@@ -4,7 +4,7 @@ import { useAppContext } from "@/lib/state-context";
 import { produce } from "solid-js/store";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
-import X from "lucide-solid/icons/X";
+import X from "lucide-solid/icons/x";
 
 const Mcq: Component<{
   index: number;
