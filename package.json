@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@types/node": "^22.15.18",
     "tw-animate-css": "^1.3.0",
     "typescript": "^5.7.2",
@@ -30,6 +31,7 @@
     "@thisbeyond/solid-dnd": "^0.7.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "file-saver": "^2.0.5",
     "lucide-solid": "^0.511.0",
     "solid-js": "^1.9.5",
     "tailwind-merge": "^3.3.0",

@@ -2,6 +2,7 @@ import { type Component } from "solid-js";
 
 import { $typst } from "@myriaddreamin/typst.ts";
 import { Button } from "@/components/ui/button";
+import FileSaver from "file-saver";
 
 const DownloadButton: Component<{ content: string }> = (props) => {
   const exportPdf = () =>
@@ -9,17 +10,8 @@ const DownloadButton: Component<{ content: string }> = (props) => {
       if (!pdfData) {
         return;
       }
-      var pdfFile = new Blob([pdfData], { type: "application/pdf" });
-
-      // Creates element with <a> tag
-      const link = document.createElement("a");
-      // Sets file content in the object URL
-      link.href = URL.createObjectURL(pdfFile);
-      // Sets file name
-      link.target = "_blank";
-      // Triggers a click event to <a> tag to save file.
-      link.click();
-      URL.revokeObjectURL(link.href);
+      const pdfFile = new Blob([pdfData], { type: "application/pdf" });
+      FileSaver(pdfFile, "assessment.pdf");
     });
 
   return (
